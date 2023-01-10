@@ -1,29 +1,42 @@
 import React, { Component } from 'react'
-import styles from './Form.module.css'
+import { Child } from './components/Child'
 
 export class Form extends Component {
 
   state = {
-    name: 'Text',
-    count: 0
+    name: 'Biba',
+    count: 0,
+    show: true
   }
 
   handleChange = (event) => {
+    // console.log(event.target.value)
     this.setState({ name: event.target.value })
   }
 
   handleClick = (event) => {
+    // console.log(event.target.value)
     this.setState({ count: this.state.count + 1 })
+    // this.setState((prevState) => ({ count: prevState.count + 1 }))
+  }
+
+  handleShow = () => {
+    this.setState({ show: !this.state.show })
+  }
+
+  componentDidMount () {
+    console.log('Form did mount')
   }
 
   render () {
     return (
       <>
-        <h1 className={styles.border}>Первый урок</h1>
-        <h2>Message: {this.state.name}</h2>
+        <h1>Classes Component</h1>
+        {/* <h2>Name: {this.state.name}</h2>
         <input type="text" onChange={this.handleChange} />
-        <p className={styles.text}>Константа: {this.state.count}</p>
-        <button onClick={this.handleClick}>Нажми на меня</button>
+        <p>COUNT: {this.state.count}</p> */}
+        <button onClick={this.handleShow}>Show</button>
+        {this.state.show && <Child />}
       </>
     )
   }

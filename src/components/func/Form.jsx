@@ -1,29 +1,41 @@
-import {useState} from 'react'
+import {useState, useEffect, useCallback, useRef} from 'react'
+import {Child} from './components/Child'
+import {Button} from './ui/Button'
 
-//import styles from './Form.module.css'
+import styles from './Form.module.css'
 
 export function Form(props) {
   const [count, setCount] = useState(0)
-  const [name, setName] = useState('GB')
+  const [show, setShow] = useState(true)
 
-  const handleClick = () => {
-    setCount(count + 1)
+  const myRef = useRef()
+
+  console.log('Parent')
+
+  useEffect(() => {
+    console.log('Parent did mount');
+    console.log(myRef)
+  }, [])
+
+  
+
+  const handleClick = useCallback(() => {
+    setCount((prevCount) => prevCount + 1)
+  }, [setCount])
+
+  const handleShow = (event) => {
+    setShow(!show)
+   
   }
 
-  const handleChange = (event) => {
-    setName(event.target.value)
-  }
-
-  // console.log('style', styles)
-  console.log('props', props)
 
   return (
     <>
       <h1 style={{ color: 'green' }}>{props.title}</h1>
-      <h2 /*className={styles.border}*/>Name: {name}</h2>
-      <input type="text" onChange={handleChange} />
-      <p>COUNT: {count}</p>
-      <button onClick={handleClick}>Click</button>
+      <button onClick={handleShow}>Show</button>
+      <Button type='submit' className='btn' onClick={handleClick}>Click count</Button>
+      <p ref={myRef}>COUNT: {count}</p>
+      {show && <Child handleClick={handleClick} />}
     </>
   )
 }
