@@ -2,26 +2,32 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { AUTHOR } from '../../constants'
 import {Button} from '../ui/Button'
+import { useDispatch } from 'react-redux'
+import { addMessage } from '../../store/messages/actions'
+import { useParams } from 'react-router-dom'
 // import IButton from '@mui/material/Button';
 // import ITextField from '@mui/material/TextField';
 
 // import styles from './Form.module.css'
 
-export function Form({ addMessage }) {
+export function Form() {
   const [text, setText] = useState('')
+  const dispatch = useDispatch()
+  const { chatId } = useParams()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     //todo...
-    addMessage({
-      author: AUTHOR.user,
-      text
-    })
+    // addMessage({
+    //   author: AUTHOR.user,
+    //   text
+    // })
+    dispatch(addMessage(chatId, text))
 
     setText('')
   }
 
-  console.log('input', text)
+  // console.log('input', text)
   
   return (
     <>
