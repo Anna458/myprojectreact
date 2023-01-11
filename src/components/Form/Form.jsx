@@ -2,11 +2,10 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { AUTHOR } from '../../constants'
 import {Button} from '../ui/Button'
-//import IButton from '@mui/material/Button';
-//import ITextField from '@mui/material/TextField';
+// import IButton from '@mui/material/Button';
+// import ITextField from '@mui/material/TextField';
 
-//import styles from './Form.module.css'
-
+// import styles from './Form.module.css'
 
 export function Form({ addMessage }) {
   const [text, setText] = useState('')
@@ -33,6 +32,7 @@ export function Form({ addMessage }) {
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
+          {/* <Button type="submit" render={() => <span>BUTTON</span>}>Add message</Button> */}
           <Button type="submit">Add message</Button>
         {/* <ITextField 
           id="standard-basic"
