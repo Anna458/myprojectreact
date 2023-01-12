@@ -25,6 +25,21 @@ export const navigate = [
     name: 'About',
     to: '/about'
   },
+  {
+    id: 5,
+    name: 'Articles',
+    to: '/articles'
+  },
+  {
+    id: 6,
+    name: 'SingIn',
+    to: '/singin'
+  },
+  {
+    id: 7,
+    name: 'SignUp',
+    to: '/signup'
+  },
 ]
 
 export function Header() {
