@@ -3,12 +3,12 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { getDatabase, ref } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBvCGEHMGO44g3CnZf2WyGtgepsl4tmdNQ",
-  authDomain: "project-react-lessons.firebaseapp.com",
-  projectId: "project-react-lessons",
-  storageBucket: "project-react-lessons.appspot.com",
-  messagingSenderId: "427362077159",
-  appId: "1:427362077159:web:98000cd1e8606e2b835542"
+  apiKey: "AIzaSyAllRYd35oQgFnGZZCyAk4NOyKsbSEozZY",
+  authDomain: "gb-285061.firebaseapp.com",
+  projectId: "gb-285061",
+  storageBucket: "gb-285061.appspot.com",
+  messagingSenderId: "506223164895",
+  appId: "1:506223164895:web:eb11826187d5f8b4b1186a"
 };
 
 // Initialize Firebase
