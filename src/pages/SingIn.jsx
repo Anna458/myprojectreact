@@ -37,20 +37,22 @@ export function SingIn() {
     <>
       <div>SingIn</div>
       <form onSubmit={handleSubmit}>
-        <p>Email:</p>
+        <label>Email:
         <input 
           type="text"
           name="email"
           value={inputs.email}
           onChange={(e) => setInputs((prev) => ({...prev, [e.target.name]: e.target.value}))}
         />
-        <p>Password:</p>
+        </label>
+        <label>Password:
         <input 
           type="text"
           name="password"
           value={inputs.password}
           onChange={(e) => setInputs((prev) => ({...prev, [e.target.name]: e.target.value}))}
         />
+        </label>
         <button>login</button>
       </form>
       {loading && (
